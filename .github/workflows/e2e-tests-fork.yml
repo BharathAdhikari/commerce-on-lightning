@@ -8,9 +8,9 @@ jobs:
   e2e-test:
     runs-on: self-hosted
     env:
-      DEVHUB_USERNAME: ${{ DEVHUB_USERNAME }}
-      DEVHUB_AUTH: ${{ DEVHUB_AUTH }}
-      PR_NUMBER:  ${{ number }}
+      DEVHUB_USERNAME: ${{ secrets.DEVHUB_USERNAME }}
+      DEVHUB_AUTH: ${{ secrets.DEVHUB_AUTH }}
+      PR_NUMBER:  ${{ github.event.pull_request.number }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
