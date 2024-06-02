@@ -6,7 +6,7 @@ on:
 
 jobs:
   e2e-test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       DEVHUB_USERNAME: ${{ secrets.DEVHUB_USERNAME }}
       DEVHUB_AUTH: ${{ secrets.DEVHUB_AUTH }}
