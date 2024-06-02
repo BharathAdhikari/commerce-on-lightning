@@ -1,4 +1,4 @@
-name: e2e-tests
+name: e2e-tests-fork
 
 on:
   pull_request:
@@ -8,9 +8,9 @@ jobs:
   e2e-test:
     runs-on: self-hosted
     env:
-      DEVHUB_USERNAME: ${{ env.DEVHUB_USERNAME }}
-      DEVHUB_AUTH: ${{ env.DEVHUB_AUTH }}
-      PR_NUMBER:  ${{ env.number }}
+      DEVHUB_USERNAME: ${{ DEVHUB_USERNAME }}
+      DEVHUB_AUTH: ${{ DEVHUB_AUTH }}
+      PR_NUMBER:  ${{ number }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
