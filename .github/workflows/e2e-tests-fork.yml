@@ -43,11 +43,7 @@ jobs:
 
           ./bin/run commerce:scratchorg:create -u "$SCRATCH_ORG_USERNAME" -a "$SCRATCH_ORG_ALIAS" -v ${{ env.DEVHUB_USERNAME }} -d 1
           echo "USERNAME=$SCRATCH_ORG_USERNAME" >> "$GITHUB_OUTPUT"
-      - name: Create B2C LWR Store
-        env:
-          SCRATCH_ORG_USERNAME: ${{ steps.scratch-org-step.outputs.USERNAME }}
-        run: ./bin/run commerce:store:create -n b2cstore01 -b b2cbuyer@commerce.com -v ${{ env.DEVHUB_USERNAME }} -u ${{ env.SCRATCH_ORG_USERNAME }} --json    
-          
+        
       - name: Create B2B LWR Store
         env:
           SCRATCH_ORG_USERNAME: ${{ steps.scratch-org-step.outputs.USERNAME }}
