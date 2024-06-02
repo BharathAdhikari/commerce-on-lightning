@@ -23,7 +23,6 @@ jobs:
           echo 'y' | npm install @salesforce/cli --global 
           npm install --global yarn
           sf --version
-          echo 'y' | sf plugins install shane-sfdx-plugins
       - name: Build the plugin
         run: |
           yarn install && yarn build
